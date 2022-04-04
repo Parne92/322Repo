@@ -5,35 +5,51 @@ import java.util.ArrayList;
  */
 public class FeatureHandler implements Observable {
 
-    private ArrayList<Observer> users;
+    private ArrayList<Observer> users = new ArrayList<>();
     private boolean doorIsLocked;
     private boolean camFunctional;
     private boolean lightsOn;
 
-    @Override
-    public registerUser(Observer newUser) {
+    public void registerUser(Observer newUser) {
         users.add(newUser);
     }
 
-    @Override
-    public removeUser(Observer user) {
+    public void removeUser(Observer user) {
         int userIndex = users.indexOf(user);
-        System.out.println("User " + (userIndex + 1) + " has been deleted");
+        System.out.println("\nUser " + (userIndex + 1) + " has been deleted");
         users.remove(userIndex);
     }
 
-    @Override
-    public notifyUsers() {
+    public void notifyUsers() {
         for (Observer user : users) {
             user.update(doorIsLocked, camFunctional, lightsOn);
         }
     }
 
-    public void setDoorState(boolean lockDoor) {
+    public void lockDoor(boolean lockDoor) {
         if (lockDoor) {
-            this.doorIsLocked = True;
+            this.doorIsLocked = true;
         } else {
-            this.doorIsLocked = False;
+            this.doorIsLocked = false;
         }
+        notifyUsers();
+    }
+
+    public void activateCam(boolean activateCam) {
+        if (activateCam) {
+            this.camFunctional = true;
+        } else {
+            this.camFunctional = false;
+        }
+        notifyUsers();
+    }
+
+    public void turnOnLights(boolean turnOnLights) {
+        if (turnOnLights) {
+            this.lightsOn = true;
+        } else {
+            this.lightsOn = false;
+        }
+        notifyUsers();
     }
 }

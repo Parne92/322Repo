@@ -5,9 +5,9 @@
  */
 public interface Observable {
 
-    public registerUser(Observer o);
+    public void registerUser(Observer o);
 
-    public removeUser(Observer o);
+    public void removeUser(Observer o);
 
-    public notifyUsers();
+    public void notifyUsers();
 }
