@@ -10,11 +10,13 @@ public class FeatureHandler implements Observable {
     private boolean camFunctional;
     private boolean lightsOn;
 
+    @Override
     public void registerUser(Observer newUser) {
         users.add(newUser);
         newUser.setRegistrationStatus(true);
     }
 
+    @Override
     public void removeUser(Observer user) {
         int userIndex = users.indexOf(user);
         System.out.println("\nUser " + user.getUserID() + " has been deleted");
@@ -22,6 +24,7 @@ public class FeatureHandler implements Observable {
         user.setRegistrationStatus(false);
     }
 
+    @Override
     public void notifyUsers() {
         for (Observer user : users) {
             user.update(doorIsLocked, camFunctional, lightsOn);

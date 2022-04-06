@@ -10,4 +10,5 @@ public interface Observable {
     public void removeUser(Observer o);
 
     public void notifyUsers();
+
 }

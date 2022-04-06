@@ -25,7 +25,7 @@ public class MobileApp {
         backend.removeUser(user1);
 
         user1.display();
-        
+
         User user2 = new User(backend);
         user2.display();
 
