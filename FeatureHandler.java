@@ -12,12 +12,14 @@ public class FeatureHandler implements Observable {
 
     public void registerUser(Observer newUser) {
         users.add(newUser);
+        newUser.setRegistrationStatus(true);
     }
 
     public void removeUser(Observer user) {
         int userIndex = users.indexOf(user);
-        System.out.println("\nUser " + (userIndex + 1) + " has been deleted");
+        System.out.println("\nUser " + user.getUserID() + " has been deleted");
         users.remove(userIndex);
+        user.setRegistrationStatus(false);
     }
 
     public void notifyUsers() {

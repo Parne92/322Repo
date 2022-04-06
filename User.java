@@ -6,6 +6,7 @@ public class User implements Observer {
     private boolean doorIsLocked;
     private boolean camFunctional;
     private boolean lightsOn;
+    private boolean isRegistered;
 
     private static int userIDtracker = 0;
 
@@ -28,7 +29,22 @@ public class User implements Observer {
     }
 
     public void display() {
-        System.out.println("\nUser " + userID + "\nDoor is locked : " + this.doorIsLocked + "\nCamera is functional : "
+        if (this.isRegistered)
+        System.out.println("\nDoor is locked : " + this.doorIsLocked + "\nCamera is functional : "
                 + this.camFunctional + "\nLights are on : " + this.lightsOn);
+        else 
+            System.out.println("Access Denied");
+    }
+
+    public int getUserID() {
+        return this.userID;
+    }
+
+    public void setRegistrationStatus(boolean registrationStatus) {
+        this.isRegistered = registrationStatus;
+    }
+
+    public boolean getRegistrationStatus() {
+        return this.isRegistered;
     }
 }
