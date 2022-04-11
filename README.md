@@ -5,10 +5,11 @@ Members: Patrick Tung, Nathan Parnell, Treyton Grossman
 
 Standup Attendence Tracker
 
-|     | Patrick Tung | Nathan Parnell | Trey Grossman |
-| --- | ------------ | -------------- | ------------- |
-| 4/4 | √            | √              | X             |
-| 4/6 | √            | √              | √             |
+|      | Patrick Tung | Nathan Parnell | Trey Grossman |
+| ---- | ------------ | -------------- | ------------- |
+| 4/4  | ✓            | ✓              | ❌             |
+| 4/6  | ✓            | ✓              | ✓             |
+| 4/11 | ✓            | ✓              | ✓             |
 
 
 
