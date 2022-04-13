@@ -1,4 +1,5 @@
 # 322Repo
+
 ESOF 322 Group Project 1 Group
 
 Members: Patrick Tung, Nathan Parnell, Treyton Grossman
@@ -10,9 +11,7 @@ Standup Attendence Tracker
 | 4/4  | ✓            | ✓              | ❌             |
 | 4/6  | ✓            | ✓              | ✓             |
 | 4/11 | ✓            | ✓              | ✓             |
-
-
-
+| 4/13 | ✓            | ✓              | ✓             |
 
 Group Project 1 requirements:
 
