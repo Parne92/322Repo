@@ -1,5 +1,6 @@
 /**
- * Purpose: To act as a contract for Home security system feature classes
+ * Purpose: To act as a contract for Home security system feature classes.
+ * This interface handles registering, removing and updating all Observers.
  * 
  * @author Patrick Tung
  */

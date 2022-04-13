@@ -18,7 +18,7 @@ public class GroupProjectTest {
      * @param args the command-line arguments
      */
     public static void main(String[] args) {
-        // TODO comment out everything
+        // TODO Comment out everything
 
         FeatureHandler backend = new FeatureHandler();
 
