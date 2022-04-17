@@ -8,7 +8,9 @@ public interface Observable {
 
     public void registerUser(Observer o);
 
-    public void removeUser(Observer o);
+    public void removeUser(int ID);
+    
+    public void viewUsers();
 
     public void notifyUsers();
 

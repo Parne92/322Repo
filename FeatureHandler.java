@@ -24,6 +24,7 @@ public class FeatureHandler implements Observable {
      */
     @Override
     public void registerUser(Observer newUser) {
+        System.out.println(".");
         users.add(newUser);
         newUser.setRegistrationStatus(true);
     }
@@ -33,11 +34,28 @@ public class FeatureHandler implements Observable {
      * user access.
      */
     @Override
-    public void removeUser(Observer user) {
-        int userIndex = users.indexOf(user);
-        System.out.println("\nUser " + user.getUserID() + " has been deleted");
-        users.remove(userIndex);
-        user.setRegistrationStatus(false);
+    public void removeUser(int ID) {
+        for (int i = 0; i < users.size(); i++){
+            if (ID == 0){
+                System.out.println("Default user cannot be deleted!");
+                break;
+            }
+            if (users.get(i).getUserID() == ID){
+                System.out.println("\nUser " + users.get(ID).getUserID() + " has been deleted");
+                users.remove(i);
+            }
+        }
+        
+    }
+    
+    /**
+     * Prints list of registered users
+     */
+    public void viewUsers(){
+        System.out.println("List of current registered users:\n" + users.size() + " users registered.");
+        for (int i = 0; i < users.size(); i++){
+            System.out.println("User ID: " + users.get(i).getUserID() + "\tRegistration Status: " + users.get(i).getRegistrationStatus());
+        }
     }
 
     /**

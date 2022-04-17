@@ -20,23 +20,21 @@ public class GroupProjectTest {
     public static void main(String[] args) {
         // TODO Comment out everything
 
+        
         FeatureHandler backend = new FeatureHandler();
         MobileApp MA = new MobileApp();
-
-
-        User user0 = new User(backend);
 
         //This is only a test, i.e what this hypothetical user left their home as.
         backend.activateCam(false);
         backend.lockDoor(true);
         backend.turnOnLights(true);
 
-        user0.getUserID();
-        user0.display();
+        //user0.getUserID();
+        //user0.display();
 
         MA.MainMenu(backend);
 
-
+        /*
         User user1 = new User(backend);
 
         //Another hypothetical situation.
@@ -45,7 +43,7 @@ public class GroupProjectTest {
         backend.turnOnLights(false);
 
         user1.getUserID();
-        backend.removeUser(user1);
+        backend.removeUser(1);
 
         user1.display();
 
@@ -58,11 +56,12 @@ public class GroupProjectTest {
         user2.display();
         user3.display();
 
-        backend.removeUser(user2);
-        backend.removeUser(user3);
+        backend.removeUser(2);
+        backend.removeUser(3);
 
         user2.display();
         user3.display();
+        */
     }
 }
 

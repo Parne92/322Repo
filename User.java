@@ -33,7 +33,8 @@ public class User implements Observer, Display {
         System.out.println("\nNew user " + this.userID);
         // Add the new user account to the list of dependent observers that the
         // Observable tracks
-        backend.registerUser(this);
+        
+        //backend.registerUser(this);
     }
 
     /**
@@ -71,6 +72,11 @@ public class User implements Observer, Display {
     @Override
     public void setRegistrationStatus(boolean isRegistered) {
         this.isRegistered = isRegistered;
+    }
+    
+    @Override
+    public boolean getRegistrationStatus(){
+        return isRegistered; 
     }
 
     /**
