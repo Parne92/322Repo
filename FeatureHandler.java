@@ -24,7 +24,6 @@ public class FeatureHandler implements Observable {
      */
     @Override
     public void registerUser(Observer newUser) {
-        System.out.println(".");
         users.add(newUser);
         newUser.setRegistrationStatus(true);
     }
@@ -41,7 +40,7 @@ public class FeatureHandler implements Observable {
                 break;
             }
             if (users.get(i).getUserID() == ID){
-                System.out.println("\nUser " + users.get(ID).getUserID() + " has been deleted");
+                System.out.println("\nUser " + users.get(i).getUserID() + " has been deleted");
                 users.remove(i);
             }
         }
