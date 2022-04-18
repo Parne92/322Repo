@@ -32,7 +32,7 @@ public class GroupProjectTest {
         //user0.getUserID();
         //user0.display();
 
-        MA.MainMenu(backend);
+        MA.mainMenu(backend);
 
         /*
         User user1 = new User(backend);

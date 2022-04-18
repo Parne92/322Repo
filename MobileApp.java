@@ -5,7 +5,7 @@ import java.util.Scanner;
  */
 public class MobileApp {
     //Main Menu GUI, based on the backend.
-    public void MainMenu(FeatureHandler backend){
+    public void mainMenu(FeatureHandler backend){
         Scanner sc = new Scanner(System.in);
         String choice = "";
         while(("Q".equalsIgnoreCase(choice))!= true){
@@ -20,16 +20,16 @@ public class MobileApp {
             //Switch Statement block that calls respective manipulateDevice methods.
             switch(choice.toUpperCase()){
                 case "A":
-                    ManipulateDoor(backend);
+                    manipulateDoor(backend);
                     break;
                 case "B":
-                    ManipulateLight(backend);
+                    manipulateLight(backend);
                     break;
                 case "C":
-                    ManipulateCamera(backend);
+                    manipulateCamera(backend);
                     break;
                 case "D":
-                    ManipulateUserArray(backend);
+                    manipulateUserArray(backend);
                     break;
                 case "Q":
                     System.out.println("Exiting...");
@@ -43,7 +43,7 @@ public class MobileApp {
     }
 
     //Manipulate Door Method, updates the backend with user's choice.
-    public void ManipulateDoor(FeatureHandler backend) {
+    public void manipulateDoor(FeatureHandler backend) {
         System.out.println("Would you like to update your door?");
         System.out.println("A.Unlock");
         System.out.println("B.Lock");
@@ -67,7 +67,7 @@ public class MobileApp {
         return;
     }
     //Manipulate Device for the lights, functionally similar to the doors.
-    public void ManipulateLight(FeatureHandler backend) {
+    public void manipulateLight(FeatureHandler backend) {
         System.out.println("Would you like to update your Lights?");
         System.out.println("A.Turn Off");
         System.out.println("B.Turn On");
@@ -90,7 +90,7 @@ public class MobileApp {
         return;
     }
     //Respective method for the camera.
-    public void ManipulateCamera(FeatureHandler backend) {
+    public void manipulateCamera(FeatureHandler backend) {
         System.out.println("Would you like to update your camera?");
         System.out.println("A.Turn Off");
         System.out.println("B.Turn On");
@@ -120,7 +120,7 @@ public class MobileApp {
      * 
      * Method UI for users to manipulate the current list of system users
      */
-    public void ManipulateUserArray(FeatureHandler backend){
+    public void manipulateUserArray(FeatureHandler backend){
         System.out.println("Would you like to add, remove, or view users?");
         System.out.println("A.Add");
         System.out.println("B.Remove");
