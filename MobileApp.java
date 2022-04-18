@@ -17,24 +17,26 @@ public class MobileApp {
             System.out.println("D.Edit Users");
             System.out.println("Q.Quit");
             choice = sc.next();
-            //If Statement block that calls respective manipulateDevice methods.
-            if(choice.equalsIgnoreCase("A")){
-                ManipulateDoor(backend);
-            }
-            else if(choice.equalsIgnoreCase("B")){
-                ManipulateLight(backend);
-            }
-            else if(choice.equalsIgnoreCase("C")){
-                ManipulateCamera(backend);
-            }
-            else if(choice.equalsIgnoreCase("D")){
-                ManipulateUserArray(backend);
-            }
-            else if(choice.equalsIgnoreCase("Q")){
-                System.out.println ("Exiting...");
-            }
-            else{
-                System.out.println("Unrecognized Input");
+            //Switch Statement block that calls respective manipulateDevice methods.
+            switch(choice.toUpperCase()){
+                case "A":
+                    ManipulateDoor(backend);
+                    break;
+                case "B":
+                    ManipulateLight(backend);
+                    break;
+                case "C":
+                    ManipulateCamera(backend);
+                    break;
+                case "D":
+                    ManipulateUserArray(backend);
+                    break;
+                case "Q":
+                    System.out.println("Exiting...");
+                    break;
+                default:
+                    System.out.println("Unrecognized Input");
+                    break;
             }
         }
         return;
@@ -48,18 +50,19 @@ public class MobileApp {
         System.out.println("Any Other Key to Quit.");
         Scanner sc = new Scanner(System.in);
         String choice = sc.nextLine();
-        if (choice.equalsIgnoreCase("A")) {
-            System.out.println("Door Unlocked!");
-            //"Unlocking" the door at the backend.
-            backend.lockDoor(false);
 
-        } else if (choice.equalsIgnoreCase("B")) {
-            System.out.println("Door Locked!");
-            //"Locking the door" at the backend.
-            backend.lockDoor(true);
-        } else {
-            //No update to teh backend.
-            System.out.println("No Status Update.");
+        switch(choice.toUpperCase()){
+            case "A":
+                System.out.println("Door Unlocked!");
+                backend.lockDoor(false);
+                break;
+            case "B":
+                System.out.println("Door Locked!");
+                backend.lockDoor(true);
+                break;
+            default:
+                System.out.println("No Status Update.");
+                break;
         }
         return;
     }
@@ -71,18 +74,18 @@ public class MobileApp {
         System.out.println("Any Other Key to Quit.");
         Scanner sc = new Scanner(System.in);
         String choice = sc.nextLine();
-        if (choice.equalsIgnoreCase("A")) {
-            //Turning off the lights in the backend.
-            System.out.println("Lights off!");
-            backend.turnOnLights(false);
-
-        } else if (choice.equalsIgnoreCase("B")) {
-            //Turning on the lights in the backend.
-            System.out.println("Lights On!");
-            backend.turnOnLights(true);
-        } else {
-            //Nothing to change.
-            System.out.println("No Status Update.");
+        switch(choice.toUpperCase()){
+            case "A":
+                System.out.println("Light Turned Off!");
+                backend.turnOnLights(false);
+                break;
+            case "B":
+                System.out.println("Light Turned On!");
+                backend.turnOnLights(true);
+                break;
+            default:
+                System.out.println("No Status Update.");
+                break;
         }
         return;
     }
@@ -95,15 +98,18 @@ public class MobileApp {
         Scanner sc = new Scanner(System.in);
         String choice = sc.nextLine();
         //Backend Camera Update.
-        if (choice.equalsIgnoreCase("A")) {
-            System.out.println("Camera Deactivated!");
-            backend.activateCam(false);
-
-        } else if (choice.equalsIgnoreCase("B")) {
-            System.out.println("Camera Activated!");
-            backend.activateCam(true);
-        } else {
-            System.out.println("No Status Update.");
+        switch(choice.toUpperCase()){
+            case "A":
+                System.out.println("Camera Deactivated!");
+                backend.activateCam(false);
+                break;
+            case "B":
+                System.out.println("Camera Activated!");
+                backend.activateCam(true);
+                break;
+            default:
+                System.out.println("No Status Update.");
+                break;
         }
         return;
     }
@@ -122,23 +128,24 @@ public class MobileApp {
         System.out.println("Any Other Key to Quit.");
         Scanner scan = new Scanner(System.in);
         String input = scan.next();
-        if (input.equalsIgnoreCase("A")){
-            User newUser = new User(backend);
-            backend.registerUser(newUser);
+        switch(input.toUpperCase()){
+            case "A":
+                User newUser = new User(backend);
+                backend.registerUser(newUser);
+                break;
+            case "B":
+                System.out.println("Enter ID of user to delete:");
+                scan.reset();
+                int inputID = scan.nextInt();
+                backend.removeUser(inputID);
+                break;
+            case "C":
+                backend.viewUsers();
+                break;
+            default:
+                System.out.println("Users Not Updated");
+                break;
         }
-        else if (input.equalsIgnoreCase("B")){
-            System.out.println("Enter ID of user to delete:");
-            scan.reset();
-            int inputID = scan.nextInt();
-            backend.removeUser(inputID);
-        }
-        else if (input.equalsIgnoreCase("C")){
-            backend.viewUsers();
-        }
-        else{
-            System.out.println("Users not updated.");
-        }
-        
     }
 
 }
